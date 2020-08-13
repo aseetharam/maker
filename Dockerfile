@@ -23,6 +23,7 @@ RUN apt-get install -y libncurses5-dev
 RUN apt-get install -y libssl-dev
 RUN apt-get install -y libcurl3-dev
 RUN apt-get install -y libboost-all-dev
+RUN apt-get install -y mpich2 
 RUN git clone https://github.com/samtools/htslib.git /root/htslib
 WORKDIR "/root/htslib"
 RUN autoheader
