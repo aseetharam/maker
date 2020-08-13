@@ -1,15 +1,28 @@
 FROM continuumio/miniconda3
 RUN apt-get update
-RUN apt-get install -y build-essential wget git autoconf
-RUN apt-get install -y libsqlite3-dev libmysql++-dev
-RUN apt-get install -y libgsl-dev libboost-all-dev libsuitesparse-dev liblpsolve55-dev
-RUN apt-get install -y libboost-iostreams-dev zlib1g-dev
-RUN apt-get install -y ncbi-blast+ hmmer cd-hit exonerate
-RUN apt-get install -y libbamtools-dev
-RUN apt-get install -y libbz2-dev liblzma-dev
-RUN apt-get install -y libncurses5-dev
-RUN apt-get install -y libssl-dev libcurl3-dev
+RUN apt-get install -y build-essential
+RUN apt-get install -y wget
+RUN apt-get install -y git
+RUN apt-get install -y autoconf
+RUN apt-get install -y libsqlite3-dev
+RUN apt-get install -y libgsl-dev
 RUN apt-get install -y libboost-all-dev
+RUN apt-get install -y libsuitesparse-dev
+RUN apt-get install -y liblpsolve55-dev
+RUN apt-get install -y libboost-iostreams-dev
+RUN apt-get install -y zlib1g-dev
+RUN apt-get install -y ncbi-blast+
+RUN apt-get install -y hmmer
+RUN apt-get install -y cd-hit
+RUN apt-get install -y exonerate
+RUN apt-get install -y libbamtools-dev
+RUN apt-get install -y libbz2-dev
+RUN apt-get install -y liblzma-dev
+RUN apt-get install -y libncurses5-dev
+RUN apt-get install -y libssl-dev
+RUN apt-get install -y libcurl3-dev
+RUN apt-get install -y libboost-all-dev
+RUN apt-get install -y libmysql++-dev
 RUN git clone https://github.com/samtools/htslib.git /root/htslib
 WORKDIR "/root/htslib"
 RUN autoheader
