@@ -20,7 +20,15 @@ RUN apt-get install -y libncurses5-dev
 RUN apt-get install -y libssl-dev
 RUN apt-get install -y libcurl3-dev
 RUN apt-get install -y libboost-all-dev
-RUN apt-get install -y mpich2 
+RUN apt-get install -y gfortran
+# mpich2
+WORKDIR /root
+RUN wget http://www.mpich.org/static/downloads/1.4.1/mpich2-1.4.1.tar.gz
+RUN tar xzf mpich2-1.4.1.tar.gz
+WORKDIR /root/mpich2-1.4.1
+RUN ./configure
+RUN make && make install
+ENV PATH="${PATH}:/root/mpich2-1.4.1/bin"
 # apt tools
 RUN apt-get install -y ncbi-blast+
 RUN apt-get install -y hmmer
