@@ -5,6 +5,7 @@ RUN apt-get install -y wget
 RUN apt-get install -y git
 RUN apt-get install -y autoconf
 RUN apt-get install -y libsqlite3-dev
+RUN apt-get install -y libmysql++-dev
 RUN apt-get install -y libgsl-dev
 RUN apt-get install -y libboost-all-dev
 RUN apt-get install -y libsuitesparse-dev
@@ -22,7 +23,6 @@ RUN apt-get install -y libncurses5-dev
 RUN apt-get install -y libssl-dev
 RUN apt-get install -y libcurl3-dev
 RUN apt-get install -y libboost-all-dev
-RUN apt-get install -y libmysql++-dev
 RUN git clone https://github.com/samtools/htslib.git /root/htslib
 WORKDIR "/root/htslib"
 RUN autoheader
