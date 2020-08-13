@@ -6,6 +6,14 @@ RUN apt-get install -y wget
 RUN apt-get install -y git
 RUN apt-get install -y autoconf
 RUN apt-get install -y libsqlite3-dev
+RUN apt-get install -y bzip2
+RUN apt-get install -y ca-certificates    
+RUN apt-get install -y libglib2.0-0
+RUN apt-get install -y libxext6
+RUN apt-get install -y libsm6
+RUN apt-get install -y libxrender1
+RUN apt-get install -y mercurial
+RUN apt-get install -y subversion
 RUN apt-get install -y libmysql++-dev
 RUN apt-get install -y libgsl-dev
 RUN apt-get install -y libboost-all-dev
@@ -86,13 +94,14 @@ RUN make install
 ENV PATH="/root/augustus/bin:${PATH}"
 RUN make unit_test
 # configure conda
-RUN apt-get install -y wget && rm -rf /var/lib/apt/lists/*
-
-RUN wget \
-    https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
-    && mkdir /root/.conda \
-    && bash Miniconda3-latest-Linux-x86_64.sh -b \
-    && rm -f Miniconda3-latest-Linux-x86_64.sh 
+ENV PATH /opt/conda/bin:$PATH
+RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda2-4.5.11-Linux-x86_64.sh -O ~/miniconda.sh && \
+    /bin/bash ~/miniconda.sh -b -p /opt/conda && \
+    rm ~/miniconda.sh && \
+    ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
+    echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
+    echo "conda activate base" >> ~/.bashrc
+RUN source  ~/.bashrc
 RUN conda --version
 RUN conda config --add channels defaults
 RUN conda config --add channels bioconda
