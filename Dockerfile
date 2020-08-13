@@ -5,7 +5,7 @@ RUN apt-get install -y wget
 RUN apt-get install -y git
 RUN apt-get install -y autoconf
 RUN apt-get install -y libsqlite3-dev
-RUN apt-get install -y libmysql++-dev
+RUN apt-get install -y libmysqlclient-dev
 RUN apt-get install -y libgsl-dev
 RUN apt-get install -y libboost-all-dev
 RUN apt-get install -y libsuitesparse-dev
