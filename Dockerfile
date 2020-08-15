@@ -66,4 +66,4 @@ RUN cd maker/src
 RUN echo Y | perl ./Build.PL
 RUN ./Build installdeps
 RUN ./Build install
-HEALTHCHECK /bin/bash /tests.sh
+CMD /bin/bash /tests.sh
