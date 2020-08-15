@@ -78,12 +78,12 @@ From: ubuntu:18.04
 # genemark
 
 # maker
-   cd /opt
-   wget http://yandell.topaz.genetics.utah.edu/maker_downloads/47DA/F2FC/9A91/967425BE163605C14F4A5434EAF7/maker-2.31.11.tgz
-   tar xf maker-2.31.11.tgz
-   rm maker-2.31.11.tgz
-   cd maker/src
-   echo Y | perl ./Build.PL
-   ./Build installdeps
-   ./Build install
+#   cd /opt
+#   wget http://yandell.topaz.genetics.utah.edu/maker_downloads/47DA/F2FC/9A91/967425BE163605C14F4A5434EAF7/maker-2.31.11.tgz
+#   tar xf maker-2.31.11.tgz
+#   rm maker-2.31.11.tgz
+#   cd maker/src
+#   echo Y | perl ./Build.PL
+#   ./Build installdeps
+#   ./Build install
 
