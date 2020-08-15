@@ -19,7 +19,7 @@ From: ubuntu:18.04
 
 %test
    which perl
-   which maker
+#   which maker
    which snap
    which RepeatMasker
    which augustus
